@@ -37,7 +37,7 @@ elif ENVIRONMENT == "staging" or ENVIRONMENT == "testing":
 else:
     DEBUG         = False
     SITE_ID       = 1
-    ALLOWED_HOSTS = ("fixmystreet.irisnet.be", "fixmystreet.brussels")
+    ALLOWED_HOSTS = ("fixmystreet-old.irisnet.be")
 
 
 # VERSION
