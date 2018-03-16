@@ -1816,7 +1816,8 @@ class ReportNotification(models.Model):
                     if f.file_type == ReportFile.IMAGE:
                         msg.attach(f.file.name, f.image.read(), 'image/png')
 
-            msg.send()
+            # FMX-2466 Deactivate mail sending
+            # msg.send()
             self.success = True
             super(ReportNotification, self).save(*args, **kwargs)
         except Exception as e:

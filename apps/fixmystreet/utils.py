@@ -548,7 +548,8 @@ def send_digest(user, activity, activities_list, date_digest):
 
     msg = EmailMultiAlternatives(subject, digests_subscriptions, settings.DEFAULT_FROM_EMAIL, (user.email,))
     msg.attach_alternative(digests_subscriptions, "text/html")
-    msg.send()
+    # FMX-2466 Deactivate mail sending
+    # msg.send()
 
     deactivate()
 

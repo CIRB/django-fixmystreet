@@ -202,8 +202,8 @@ class FmsUserCreateForm(FmsUserForm):
             msg = EmailMultiAlternatives(subject, text, settings.DEFAULT_FROM_EMAIL, recipients, headers={"Reply-To": user.modified_by.email})
             if html:
                 msg.attach_alternative(html, "text/html")
-
-            msg.send()
+            # FMX-2466 Deactivate mail sending
+            # msg.send()
             # MAIL SENDED
 
 

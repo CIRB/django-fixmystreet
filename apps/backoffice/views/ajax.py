@@ -170,7 +170,8 @@ def send_pdf(request, report_id):
         name = "export-incident-%s-date-%s.pdf" % (report.id, datetime.date.today().isoformat())
         msg.attach(name, pdffile.read(), 'application/pdf')
 
-        msg.send()
+        # FMX-2466 Deactivate mail sending
+        # msg.send()
         to_return["logMessages"].append(_("Successfully sent to '{email}'.").format(email=recipient))
         to_return["validRecipients"].append(recipient)
 
